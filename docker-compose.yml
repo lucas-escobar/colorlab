@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  db:
+    build:
+      context: .
+      dockerfile: ./docker/db/Dockerfile
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: colorlab 
+      POSTGRES_USER: postgres 
+      POSTGRES_PASSWORD: postgres 
+
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/web/Dockerfile
+    volumes:
+      - ./src/:/colorlab
+    ports:
+      - "8000:8000"
+    environment:
+      DJANGO_SETTINGS_MODULE: colorlab.settings
+      PYTHONDONTWRITEBYTECODE: 1
+      PYTHONUNBUFFERED: 1
+    depends_on:
+      - db
+
+volumes:
+  pg_data:

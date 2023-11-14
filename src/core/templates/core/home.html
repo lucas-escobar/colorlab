@@ -1,0 +1,35 @@
+{% extends 'shared/base.html' %}
+
+{% block head %}
+{% load static %}
+<link rel="stylesheet" href={% static 'core/css/home.css' %}>
+{% endblock %}
+
+{% block header %} 
+<div id="navbar">
+    <div id="nav-container"> 
+        <button id="homebtn">Colorlab</button>
+        <div id="register-container">
+            <button class="navbtn" id="loginbtn">Log in</button>
+            <button class="navbtn" id="signupbtn">Sign up</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block main %}
+<div id="maincard">
+    <div id="btncontainer"> 
+        <button class="ctabtn">Start</button>
+        <button class="ctabtn">Learn more</button>
+    </div>
+</div>
+<div id="canvas-container">
+    <canvas id="webglcanvas"></canvas>
+</div>
+<div id="scrolldown-prompt"></div>
+<script src={% static 'core/js/dist/index.bundle.js'%} defer></script>
+{% endblock %}
+
+{% block footer %} 
+{% endblock %}

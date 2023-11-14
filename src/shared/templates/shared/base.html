@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ColorLab{% endblock %}</title>
+
+    
+    {% load static %}
+    <style>
+    :root {
+      --font-family: 'Roboto';
+    }
+    @font-face {
+      font-family: var(--font-family);
+      src: url({% static "shared/fonts/Roboto-Regular.ttf"%}) format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: var(--font-family);
+      src: url({% static 'shared/fonts/Roboto-Medium.ttf' %}) format('truetype');
+      font-weight: 500;
+      font-style: normal;
+    })
+    @font-face {
+      font-family: var(--font-family);
+      src: url({% static 'shared/fonts/Roboto-MediumItalic.ttf' %}) format('truetype');
+      font-weight: 500;
+      font-style: italic;
+    })
+    @font-face {
+      font-family: var(--font-family);
+      src: url({% static 'shared/fonts/Roboto-Light.ttf' %}) format('truetype');
+      font-weight: 300;
+      font-style: normal;
+    })
+    @font-face {
+      font-family: var(--font-family);
+      src: url({% static 'shared/fonts/Roboto-LightItalic.ttf' %}) format('truetype');
+      font-weight: 300;
+      font-style: italic;
+    })
+
+    @font-face {
+      font-family: var(--font-family);
+      src: url({% static 'shared/fonts/Roboto-Bold.ttf' %}) format('truetype');
+      font-weight: 700;
+      font-style: normal;
+    })
+    @font-face {
+      font-family: var(--font-family);
+      src: url({% static 'shared/fonts/Roboto-BoldItalic.ttf' %}) format('truetype');
+      font-weight: 700;
+      font-style: italic;
+    })
+    @font-face {
+      font-family: var(--font-family);
+      src: url({% static 'shared/fonts/Roboto-Black.ttf' %}) format('truetype');
+      font-weight: 900;
+      font-style: normal;
+    })
+    @font-face {
+      font-family: var(--font-family);
+      src: url({% static 'shared/fonts/Roboto-BlackItalic.ttf' %}) format('truetype');
+      font-weight: 900;
+      font-style: italic;
+    })
+    @font-face {
+      font-family: var(--font-family);
+      src: url({% static 'shared/fonts/Roboto-Thin.ttf' %}) format('truetype');
+      font-weight: 100;
+      font-style: normal;
+    })
+    @font-face {
+      font-family: var(--font-family);
+      src: url({% static 'shared/fonts/Roboto-ThinItalic.ttf' %}) format('truetype');
+      font-weight: 100;
+      font-style: italic;
+    })
+    @font-face {
+      font-family: var(--font-family);
+      src: url({% static 'shared/fonts/Roboto-Italic.ttf' %}) format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    })
+    </style>
+    <link rel="stylesheet" href="{% static 'shared/css/base.css' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'shared/favicon/favicon-16x16.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'shared/favicon/favicon-32x32.png' %}">
+
+    {% block head %}{% endblock %}
+</head>
+<body>
+
+<header>
+  {% block header %}{% endblock %}
+</header>
+
+<main>
+    {% block main %}{% endblock %}
+</main>
+
+<footer>
+  {% block footer %}{% endblock %}
+</footer>
+
+</body>
+</html>
